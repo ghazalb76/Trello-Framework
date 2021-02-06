@@ -7,7 +7,7 @@ public class Card {
     private int cid; // card id
     private String ctitle; // card title
     private String cdesc;  //card description
-    private int clid; // checklist id foreign key
+    private  int[] clids; // array of checklist id foreign key
     private LocalDateTime ccreate; // card create time
     private LocalDateTime cdue; // card due date
 
@@ -35,12 +35,12 @@ public class Card {
         this.cdesc = desc;
     }
 
-    public int getClId() {
-        return clid;
+    public int[] getClIds() {
+        return clids;
     }
 
-    public void setClId(int id) {
-        this.clid = id;
+    public void setClIds(int[] ids) {
+        this.clids = ids;
     }
 
     public LocalDateTime getCCreate() {

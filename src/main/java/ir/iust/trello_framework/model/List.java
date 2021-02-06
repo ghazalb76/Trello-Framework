@@ -30,17 +30,17 @@ public class List {
         return cids;
     }
 
-    public void setCId(int[] ids) {
+    public void setCIds(int[] ids) {
         this.cids = ids;
     }
 
 
 
-    public int geTId() {
+    public int geTTid() {
         return tid;
     }
 
-    public void seTId(int id) {
+    public void seTTid(int id) {
         this.tid = id;
     }
 
