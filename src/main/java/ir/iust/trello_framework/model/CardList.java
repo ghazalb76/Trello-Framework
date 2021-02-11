@@ -1,13 +1,16 @@
 package ir.iust.trello_framework.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class Board {
+public class CardList {
 
-    private int id;
-    private String name; // Board name
+    private int id; // list id
+    private String title; // list title
     private Team team; // team id foreign key
-    private LocalDateTime creationDate; // Board create time
+    private LocalDateTime creationDate; // list create time
+    private Board board;
+
 
     public int getId() {
         return id;
@@ -17,14 +20,13 @@ public class Board {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
-
 
 
     public Team getTeam() {
@@ -41,5 +43,13 @@ public class Board {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 }

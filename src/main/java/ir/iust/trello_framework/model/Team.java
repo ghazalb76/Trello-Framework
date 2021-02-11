@@ -1,36 +1,40 @@
 package ir.iust.trello_framework.model;
 
 
+import java.util.HashMap;
+import java.util.List;
 
-public class team {
+public class Team {
 
-    private int tid; // team id
-    private String tname;
-    private int[] uids; // array of team member user id foreign keys
+    private int id; // team id
+    private String name;
+    private HashMap<String, Object> properties = new HashMap<>();
 
-    public int getTId() {
-        return tid;
+    public Object getProperty(String key)
+    {
+        return properties.get(key);
     }
 
-    public void setTId(int id) {
-        this.tid = id;
+    public void setProperty(String key, Object value)
+    {
+        properties.put(key, value);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 
-    public String getTName() {
-        return tname;
-    }
-
-    public void setTName(String name) {
-        this.tname = name;
-    }
-
-
-    public int[] getUIds() {
-        return uids;
-    }
-
-    public void setUIds(int[] ids) {
-        this.uids = ids;
-    }
 }

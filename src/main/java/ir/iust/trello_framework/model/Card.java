@@ -1,65 +1,66 @@
 package ir.iust.trello_framework.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Card {
 
-    private int cid; // card id
-    private String ctitle; // card title
-    private String cdesc;  //card description
-    private  int[] clids; // array of checklist id foreign key
-    private LocalDateTime ccreate; // card create time
-    private LocalDateTime cdue; // card due date
+    private int id; // card id
+    private String title; // card title
+    //ToDo Discuss probable new class (Images also included)
+    private String description;  //card description
+    //ToDo in create getter, always consider sending iterator or the main list
+// array of checklist id foreign key
+    private LocalDateTime creationDate; // card create time
+    private LocalDateTime dueDate; // card due date
+    private CardList cardList;
 
-    public int getCId() {
-        return cid;
+    public int getId() {
+        return id;
     }
 
-    public void setCId(int id) {
-        this.cid = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCTitle() {
-        return ctitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setCTitle(String title) {
-        this.ctitle = title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getCDesc() {
-        return cdesc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCDesc(String desc) {
-        this.cdesc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int[] getClIds() {
-        return clids;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setClIds(int[] ids) {
-        this.clids = ids;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public LocalDateTime getCCreate() {
-        return ccreate;
+    public LocalDateTime getDueDate() {
+        return dueDate;
     }
 
-    public void setCCreate(LocalDateTime create) {
-        this.ccreate = create;
+    public void setDueDate(LocalDateTime dueDate) {
+        this.dueDate = dueDate;
     }
 
-    public LocalDateTime getCDue() {
-        return cdue;
+    public CardList getCardList() {
+        return cardList;
     }
 
-    public void setCDue(LocalDateTime due) {
-        this.cdue = due;
+    public void setCardList(CardList cardList) {
+        this.cardList = cardList;
     }
-
-
-
 }
 
