@@ -1,19 +1,19 @@
 package ir.iust.trello_framework.repository;
 
-import ir.iust.trello_framework.model.Card;
-
 import java.util.Iterator;
 
 public interface ICRUDRepository<Model> {
-    public void add(Model item);
+    void add(Model item);
 
-    public Iterator<Model> getAll();
+    Iterator<Model> getAll();
 
-    public Iterator<Model> getAll(Model item);
+    void delete(Model item);
 
-    public Model find(Model item);
+    Model getById(int id);
 
-    public void update(Model item);
-
-    public void delete(Model item);
+//    Iterator<Model> getAll(Model item);
+//
+//    Model find(Model item);
+//
+//    void update(Model item);
 }

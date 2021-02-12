@@ -1,6 +1,7 @@
 package ir.iust.trello_framework.service;
 
-import ir.iust.trello_framework.model.User;
+import ir.iust.trello_framework.model.Card;
+import ir.iust.trello_framework.model.CardList;
 import ir.iust.trello_framework.repository.ICRUDRepository;
 import ir.iust.trello_framework.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,25 +11,25 @@ import org.springframework.stereotype.Service;
 import java.util.Iterator;
 import java.util.List;
 
-@Service(value = "userService")
-public class UserServiceImpl implements IService<User> {
+@Service(value = "cardListService")
+public class CardListImpl implements IService<CardList> {
     @Autowired
-    @Qualifier("userRepository")
+    @Qualifier("cardListRepository")
     ICRUDRepository userRepository;
 
     @Override
-    public void add(User user) {
-        userRepository.add(user);
+    public void add(CardList cardList) {
+        userRepository.add(cardList);
     }
 
     @Override
-    public Iterator<User> getAll() {
+    public Iterator<CardList> getAll() {
         return userRepository.getAll();
     }
 
     @Override
-    public User getById(int id) {
-        return (User) userRepository.getById(id);
+    public CardList getById(int id) {
+        return (CardList) userRepository.getById(id);
     }
 
     @Override
