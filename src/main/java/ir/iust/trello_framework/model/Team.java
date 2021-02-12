@@ -1,8 +1,6 @@
 package ir.iust.trello_framework.model;
 
-
 import java.util.HashMap;
-import java.util.List;
 
 public class Team implements Matchable<Team> {
 
@@ -46,11 +44,19 @@ public class Team implements Matchable<Team> {
 
     @Override
     public boolean match(Team matcher) {
-        return this.id == matcher.getId();
+        if (matcher.getId() != 0){
+            if(this.id != matcher.getId())
+                return false;}
+
+        if (matcher.getName() != null) {
+            if (this.name.equals(matcher.getName()))
+                return false;
+        }
+        return true;
     }
 
     @Override
     public boolean checkSame(Team matcher) {
-        return false;
+        return this.id == matcher.getId();
     }
 }
