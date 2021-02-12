@@ -1,13 +1,15 @@
 package ir.iust.trello_framework.repository;
 
+import ir.iust.trello_framework.model.Card;
+import ir.iust.trello_framework.model.Matchable;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class MockCRUDRepository<Model> implements ICRUDRepository<Model> {
+public class MockCRUDRepository<Model extends Matchable> implements ICRUDRepository<Model> {
     List<Model> models;
-
-    MockCRUDRepository()
+    public MockCRUDRepository()
     {
         models = new ArrayList<Model>();
     }
@@ -24,17 +26,32 @@ public class MockCRUDRepository<Model> implements ICRUDRepository<Model> {
 
     @Override
     public Iterator<Model> findAll(Model item) {
-        return null;
+        List<Model> results = new ArrayList<>();
+        for (Model m: models
+             ) {
+            if (m.match(item)) results.add(m);
+        }
+        return results.listIterator();
     }
 
     @Override
     public Model find(Model item) {
+
+        List<Model> results = new ArrayList<>();
+        for (Model m: models
+        ) {
+            if (m.match(item)) return m;
+        }
         return null;
     }
 
     @Override
     public void update(Model item) {
-
+        List<Model> results = new ArrayList<>();
+        for (Model m: models
+        ) {
+            if (m.checkSame(item)){} //ToDo;
+        }
     }
 
     @Override
