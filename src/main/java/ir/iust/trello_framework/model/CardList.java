@@ -3,7 +3,7 @@ package ir.iust.trello_framework.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class CardList {
+public class CardList implements Matchable<CardList> {
 
     private int id; // list id
     private String title; // list title
@@ -45,7 +45,7 @@ public class CardList {
     }
 
     public LocalDateTime getCreationDate() {
-        return ;
+        return creationDate;
     }
 
     public void setCreationDate(LocalDateTime creationDate) {
@@ -58,5 +58,15 @@ public class CardList {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    @Override
+    public boolean match(CardList matcher) {
+        return false;
+    }
+
+    @Override
+    public boolean checkSame(CardList matcher) {
+        return this.id == matcher.getId();
     }
 }

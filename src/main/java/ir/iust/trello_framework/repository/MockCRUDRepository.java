@@ -37,7 +37,7 @@ public class MockCRUDRepository<Model extends Matchable> implements ICRUDReposit
     @Override
     public Model find(Model item) {
 
-        List<Model> results = new ArrayList<>();
+
         for (Model m: models
         ) {
             if (m.match(item)) return m;
@@ -48,14 +48,16 @@ public class MockCRUDRepository<Model extends Matchable> implements ICRUDReposit
     @Override
     public void update(Model item) {
         List<Model> results = new ArrayList<>();
-        for (Model m: models
-        ) {
-            if (m.checkSame(item)){} //ToDo;
+        for (int ind=0; ind < models.size(); ind++) {
+            Model m = models.get(ind);
+            if (item.checkSame(m)) models.set(ind, item);
+
         }
     }
 
     @Override
     public void delete(Model item) {
 
+        models.removeIf(m -> m.checkSame(item));
     }
 }

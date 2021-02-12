@@ -3,7 +3,7 @@ package ir.iust.trello_framework.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Card {
+public class Card implements Matchable<Card>{
 
     private int id; // card id
     private String title; // card title
@@ -23,6 +23,9 @@ public class Card {
 	this.dueDate = dueDate;
 	this.cardList = cardList;
     }
+
+    public Card()
+    {};
     
     public int getId() {
         return id;
@@ -70,6 +73,17 @@ public class Card {
 
     public void setCardList(CardList cardList) {
         this.cardList = cardList;
+    }
+
+
+    @Override
+    public boolean match(Card matcher) {
+        return false;
+    }
+
+    @Override
+    public boolean checkSame(Card matcher) {
+        return this.id == matcher.getId();
     }
 }
 

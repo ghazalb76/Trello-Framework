@@ -1,8 +1,9 @@
 package ir.iust.trello_framework.model;
 
+import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 
-public class Board {
+public class Board implements Matchable<Board> {
 
     private int id;
     private String name; // Board name
@@ -46,5 +47,15 @@ public class Board {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    @Override
+    public boolean match(Board matcher) {
+        return false;
+    }
+
+    @Override
+    public boolean checkSame(Board matcher) {
+        return this.id == matcher.getId();
     }
 }

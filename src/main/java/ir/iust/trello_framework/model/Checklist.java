@@ -6,7 +6,7 @@ enum CheckListStatus
     unchecked
 }
 
-public class Checklist {
+public class Checklist implements Matchable<Checklist> {
 
     private int id; //checklist id
     private String content; // checklist title
@@ -50,5 +50,15 @@ public class Checklist {
 
     public void setCard(Card card) {
         this.card = card;
+    }
+
+    @Override
+    public boolean match(Checklist matcher) {
+        return false;
+    }
+
+    @Override
+    public boolean checkSame(Checklist matcher) {
+        return this.id == matcher.getId();
     }
 }

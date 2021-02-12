@@ -2,9 +2,9 @@ package ir.iust.trello_framework.model;
 
 
 import java.util.List;
-import java.util.ArrayList
+import java.util.ArrayList;
 
-public class User {
+public class User implements Matchable<User>{
 
     private int id; // user id
     private String name;
@@ -20,9 +20,7 @@ public class User {
 	this.username = username;
 	this.password = password;
 
-	for(Team t : teamList) {
-	    this.teamList.add(t);
-	}
+        this.teamList.addAll(teamList);
     }
     
     public int getId() {
@@ -76,5 +74,15 @@ public class User {
     
     public List<Team> getTeamList() {
 	return teamList;
-    } 
+    }
+
+    @Override
+    public boolean match(User matcher) {
+        return false;
+    }
+
+    @Override
+    public boolean checkSame(User matcher) {
+        return this.id == matcher.getId();
+    }
 }
