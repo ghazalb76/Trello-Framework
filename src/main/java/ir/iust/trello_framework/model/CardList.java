@@ -58,6 +58,6 @@ public class CardList extends BaseEntity implements Matchable<CardList>{
 
     @Override
     public boolean checkSame(CardList matcher) {
-        return this.id == matcher.getId();
+        return this.getId() == matcher.getId();
     }
 }

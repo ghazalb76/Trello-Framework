@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class User extends BaseEntity implements Matchable<User>{
 
-    private int id; // user id
+
     private String name;
     private String email;
     private String username;
@@ -14,7 +14,6 @@ public class User extends BaseEntity implements Matchable<User>{
     private List<Team> teamList = new ArrayList();
 
     public User(int id, String name, String email, String username, String password, List<Team> teamList) {
-	this.id = id;
 	this.name = name;
 	this.email = email;
 	this.username = username;
@@ -22,14 +21,7 @@ public class User extends BaseEntity implements Matchable<User>{
 
         this.teamList.addAll(teamList);
     }
-    
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -79,7 +71,7 @@ public class User extends BaseEntity implements Matchable<User>{
     @Override
     public boolean match(User matcher) {
         if (matcher.getId() != 0){
-        if(this.id != matcher.getId())
+        if(this.getId() != matcher.getId())
             return false;}
 
         if (matcher.getName() != null) {
@@ -100,6 +92,6 @@ public class User extends BaseEntity implements Matchable<User>{
 
     @Override
     public boolean checkSame(User matcher) {
-        return this.id == matcher.getId();
+        return this.getId() == matcher.getId();
     }
 }

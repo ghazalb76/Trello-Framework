@@ -14,8 +14,7 @@ public class Card extends BaseEntity implements Matchable<Card>{
     private LocalDateTime dueDate; // card due date
     private CardList cardList;
 
-    public Card(int id, String title, String description, LocalDateTime creationDate, LocalDateTime dueDate, CardList cardList) {
-	this.id = id;
+    public Card(String title, String description, LocalDateTime creationDate, LocalDateTime dueDate, CardList cardList) {
 	this.title = title;
 	this.description = description;
 	this.creationDate = creationDate;
@@ -25,14 +24,6 @@ public class Card extends BaseEntity implements Matchable<Card>{
 
     public Card()
     {};
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -82,7 +73,7 @@ public class Card extends BaseEntity implements Matchable<Card>{
 
     @Override
     public boolean checkSame(Card matcher) {
-        return this.id == matcher.getId();
+        return this.getId() == matcher.getId();
     }
 }
 

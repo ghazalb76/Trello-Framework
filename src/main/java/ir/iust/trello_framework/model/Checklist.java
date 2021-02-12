@@ -8,20 +8,12 @@ public class Checklist extends BaseEntity implements Matchable<Checklist>{
     private CheckListStatusEnum status;
     private Card card;
 
-    public Checklist(int id, String content, CheckListStatusEnum status, Card card) {
-	this.id = id;
+    public Checklist( String content, CheckListStatusEnum status, Card card) {
 	this.content = content;
 	this.status = status;
 	this.card = card;
     }
-    
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
@@ -54,6 +46,6 @@ public class Checklist extends BaseEntity implements Matchable<Checklist>{
 
     @Override
     public boolean checkSame(Checklist matcher) {
-        return this.id == matcher.getId();
+        return this.getId() == matcher.getId();
     }
 }
