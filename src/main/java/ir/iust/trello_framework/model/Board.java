@@ -1,9 +1,8 @@
 package ir.iust.trello_framework.model;
 
-import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 
-public class Board implements Matchable<Board> {
+public class Board extends BaseEntity implements Matchable<Board>{
 
     private int id;
     private String name; // Board name

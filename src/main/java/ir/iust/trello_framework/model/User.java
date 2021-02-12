@@ -4,7 +4,7 @@ package ir.iust.trello_framework.model;
 import java.util.List;
 import java.util.ArrayList;
 
-public class User implements Matchable<User>{
+public class User extends BaseEntity implements Matchable<User>{
 
     private int id; // user id
     private String name;

@@ -3,29 +3,20 @@ package ir.iust.trello_framework.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class CardList implements Matchable<CardList> {
+public class CardList extends BaseEntity implements Matchable<CardList>{
 
-    private int id; // list id
     private String title; // list title
     private Team team; // team id foreign key
     private LocalDateTime creationDate; // list create time
     private Board board;
 
     public CardList(int id, String title, Team team, LocalDateTime creationDate, Board board) {
-	this.id = id;
 	this.title = title;
 	this.team = team;
 	this.creationDate = creationDate;
 	this.board = board;
     }
-    
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

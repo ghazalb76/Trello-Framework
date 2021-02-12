@@ -3,9 +3,8 @@ package ir.iust.trello_framework.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Card implements Matchable<Card>{
+public class Card extends BaseEntity implements Matchable<Card>{
 
-    private int id; // card id
     private String title; // card title
     //ToDo Discuss probable new class (Images also included)
     private String description;  //card description
@@ -26,7 +25,7 @@ public class Card implements Matchable<Card>{
 
     public Card()
     {};
-    
+
     public int getId() {
         return id;
     }

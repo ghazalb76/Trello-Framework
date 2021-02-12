@@ -1,8 +1,9 @@
 package ir.iust.trello_framework.model;
 
 import java.util.HashMap;
+import java.util.List;
 
-public class Team implements Matchable<Team> {
+public class Team extends BaseEntity implements Matchable<Team>{
 
     private int id; // team id
     private String name;
