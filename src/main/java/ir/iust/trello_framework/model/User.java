@@ -78,7 +78,24 @@ public class User implements Matchable<User>{
 
     @Override
     public boolean match(User matcher) {
-        return false;
+        if (matcher.getId() != 0){
+        if(this.id != matcher.getId())
+            return false;}
+
+        if (matcher.getName() != null) {
+            if (!this.name.equals(matcher.getName()))
+                return false;
+        }
+        if (matcher.getEmail() != null) {
+            if (!this.email.equals(matcher.getEmail()))
+                return false;
+        }
+
+        if (matcher.getUsername() != null) {
+            if (!this.username.equals(matcher.getUsername()))
+                return false;
+        }
+        return true;
     }
 
     @Override
