@@ -2,36 +2,15 @@ package ir.iust.trello_framework.model;
 
 
 import java.util.List;
-import java.util.ArrayList
+import java.util.ArrayList;
 
-public class User {
+public class User extends BaseEntity{
 
-    private int id; // user id
     private String name;
     private String email;
     private String username;
     private String password;
     private List<Team> teamList = new ArrayList();
-
-    public User(int id, String name, String email, String username, String password, List<Team> teamList) {
-	this.id = id;
-	this.name = name;
-	this.email = email;
-	this.username = username;
-	this.password = password;
-
-	for(Team t : teamList) {
-	    this.teamList.add(t);
-	}
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

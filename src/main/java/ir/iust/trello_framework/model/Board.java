@@ -2,27 +2,11 @@ package ir.iust.trello_framework.model;
 
 import java.time.LocalDateTime;
 
-public class Board {
+public class Board extends BaseEntity{
 
-    private int id;
     private String name; // Board name
     private Team team; // team id foreign key
     private LocalDateTime creationDate; // Board create time
-
-    public Board(int id, String name, Team team, LocalDateTime creationDate) {
-	this.id = id;
-	this.name = name;
-	this.team = team;
-	this.creationDate = creationDate;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

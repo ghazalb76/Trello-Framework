@@ -1,32 +1,12 @@
 package ir.iust.trello_framework.model;
 
-enum CheckListStatus
-{
-    checked,
-    unchecked
-}
+import ir.iust.trello_framework.model.enumeration.CheckListStatusEnum;
 
-public class Checklist {
+public class Checklist extends BaseEntity{
 
-    private int id; //checklist id
     private String content; // checklist title
-    private CheckListStatus status;
+    private CheckListStatusEnum status;
     private Card card;
-
-    public Checklist(int id, String content, CheckListStatus status, Card card) {
-	this.id = id;
-	this.content = content;
-	this.status = status;
-	this.card = card;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
@@ -36,11 +16,11 @@ public class Checklist {
         this.content = content;
     }
 
-    public CheckListStatus getStatus() {
+    public CheckListStatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(CheckListStatus status) {
+    public void setStatus(CheckListStatusEnum status) {
         this.status = status;
     }
 

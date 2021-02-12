@@ -9,7 +9,7 @@ public interface ICRUDRepository<Model> {
 
     public Iterator<Model> getAll();
 
-    public Iterator<Model> findAll(Model item);
+    public Iterator<Model> getAll(Model item);
 
     public Model find(Model item);
 

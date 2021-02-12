@@ -3,9 +3,8 @@ package ir.iust.trello_framework.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Card {
+public class Card extends BaseEntity{
 
-    private int id; // card id
     private String title; // card title
     //ToDo Discuss probable new class (Images also included)
     private String description;  //card description
@@ -14,23 +13,6 @@ public class Card {
     private LocalDateTime creationDate; // card create time
     private LocalDateTime dueDate; // card due date
     private CardList cardList;
-
-    public Card(int id, String title, String description, LocalDateTime creationDate, LocalDateTime dueDate, CardList cardList) {
-	this.id = id;
-	this.title = title;
-	this.description = description;
-	this.creationDate = creationDate;
-	this.dueDate = dueDate;
-	this.cardList = cardList;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

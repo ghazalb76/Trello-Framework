@@ -17,4 +17,22 @@ public class UserRepository {
     public List<User> getAll(){
         return usersList;
     }
+
+    public User getById(int id){
+        for (User user: usersList){
+            if(user.getId() == id){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void delete(int id){
+        for (User user: usersList){
+            if(user.getId() == id){
+                usersList.remove(user);
+            }
+        }
+
+    }
 }
