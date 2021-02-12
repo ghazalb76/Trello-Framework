@@ -11,7 +11,14 @@ public class CardList {
     private LocalDateTime creationDate; // list create time
     private Board board;
 
-
+    public CardList(int id, String title, Team team, LocalDateTime creationDate, Board board) {
+	this.id = id;
+	this.title = title;
+	this.team = team;
+	this.creationDate = creationDate;
+	this.board = board;
+    }
+    
     public int getId() {
         return id;
     }
@@ -38,7 +45,7 @@ public class CardList {
     }
 
     public LocalDateTime getCreationDate() {
-        return creationDate;
+        return ;
     }
 
     public void setCreationDate(LocalDateTime creationDate) {

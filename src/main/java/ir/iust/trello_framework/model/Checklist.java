@@ -13,7 +13,13 @@ public class Checklist {
     private CheckListStatus status;
     private Card card;
 
-
+    public Checklist(int id, String content, CheckListStatus status, Card card) {
+	this.id = id;
+	this.content = content;
+	this.status = status;
+	this.card = card;
+    }
+    
     public int getId() {
         return id;
     }

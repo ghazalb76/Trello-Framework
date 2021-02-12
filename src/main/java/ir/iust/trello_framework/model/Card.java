@@ -15,6 +15,15 @@ public class Card {
     private LocalDateTime dueDate; // card due date
     private CardList cardList;
 
+    public Card(int id, String title, String description, LocalDateTime creationDate, LocalDateTime dueDate, CardList cardList) {
+	this.id = id;
+	this.title = title;
+	this.description = description;
+	this.creationDate = creationDate;
+	this.dueDate = dueDate;
+	this.cardList = cardList;
+    }
+    
     public int getId() {
         return id;
     }

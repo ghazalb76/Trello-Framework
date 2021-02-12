@@ -9,6 +9,13 @@ public class Board {
     private Team team; // team id foreign key
     private LocalDateTime creationDate; // Board create time
 
+    public Board(int id, String name, Team team, LocalDateTime creationDate) {
+	this.id = id;
+	this.name = name;
+	this.team = team;
+	this.creationDate = creationDate;
+    }
+    
     public int getId() {
         return id;
     }
@@ -24,8 +31,6 @@ public class Board {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public Team getTeam() {
         return team;

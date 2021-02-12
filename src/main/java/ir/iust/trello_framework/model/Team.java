@@ -10,6 +10,14 @@ public class Team {
     private String name;
     private HashMap<String, Object> properties = new HashMap<>();
 
+    public Team(int id, String name, HashMap<String, Object> properties) {
+	this.id = id;
+	this.name = name;
+	for(String k : properties.keySet()) {
+	    this.setProperty(k, properties.get(k))
+	}
+    } 
+    
     public Object getProperty(String key)
     {
         return properties.get(key);
@@ -35,6 +43,4 @@ public class Team {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }

@@ -2,6 +2,7 @@ package ir.iust.trello_framework.model;
 
 
 import java.util.List;
+import java.util.ArrayList
 
 public class User {
 
@@ -10,8 +11,20 @@ public class User {
     private String email;
     private String username;
     private String password;
-    private List<Team> teamList;
+    private List<Team> teamList = new ArrayList();
 
+    public User(int id, String name, String email, String username, String password, List<Team> teamList) {
+	this.id = id;
+	this.name = name;
+	this.email = email;
+	this.username = username;
+	this.password = password;
+
+	for(Team t : teamList) {
+	    this.teamList.add(t);
+	}
+    }
+    
     public int getId() {
         return id;
     }
@@ -51,4 +64,17 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+    public void addTeam(Team t) {
+	teamList.add(t);
+    }
+
+    public void removeTeam(Team t) {
+	teamList.remove(t);
+    }
+    
+    public List<Team> getTeamList() {
+	return teamList;
+    } 
 }
