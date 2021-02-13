@@ -19,8 +19,8 @@ public class UserController {
         userService.add(user);
     }
 
-    @GetMapping("/getAllUsers")
-    public Iterable<User> getAllUsers(){ return userService.findAll(); }
+    @GetMapping("/findAllUsers")
+    public Iterable<User> findAllUsers(){ return userService.findAll(); }
 
     @PostMapping("/deleteUser")
     public void deleteUser(@RequestBody User user){
@@ -34,5 +34,5 @@ public class UserController {
     public void updateUser(@RequestBody User user){ userService.update(user); }
 
     @PostMapping("/addTeamToUser")
-    public void updateUser(@RequestBody int id, Team team){ userService.addTeam(id, team); }
+    public void addTeamToUser(@RequestBody int id, Team team){ userService.addTeam(id, team); }
 }

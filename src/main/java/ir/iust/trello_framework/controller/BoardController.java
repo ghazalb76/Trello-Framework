@@ -23,14 +23,17 @@ public class BoardController {
         boardService.add(board);
     }
 
-    @GetMapping("/getAllBoards")
-    public Iterable<Board> getAllBoards(){ return boardService.findAll(); }
+    @GetMapping("/findAllBoards")
+    public Iterable<Board> findAllBoards(){ return boardService.findAll(); }
 
     @PostMapping("/deleteBoard")
-    public void deleteBoard(@RequestBody int id){
-        boardService.delete(id);
+    public void deleteBoard(@RequestBody Board board){
+        boardService.delete(board);
     }
 
     @PostMapping("/getBoardById")
     public Board getBoardById(@RequestBody int id){ return (Board) boardService.findById(id); }
+
+    @PostMapping("/updateBoard")
+    public void updateBoard(@RequestBody Board board){ boardService.update(board); }
 }

@@ -10,13 +10,6 @@ public class CardList extends BaseEntity{
     private LocalDateTime creationDate; // list create time
     private Board board;
 
-    public CardList(int id, String title, Team team, LocalDateTime creationDate, Board board) {
-	this.title = title;
-	this.team = team;
-	this.creationDate = creationDate;
-	this.board = board;
-    }
-
     public String getTitle() {
         return title;
     }

@@ -1,5 +1,6 @@
 package ir.iust.trello_framework.controller;
 
+import ir.iust.trello_framework.model.Card;
 import ir.iust.trello_framework.model.CheckList;
 import ir.iust.trello_framework.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +23,17 @@ public class CheckListController {
         checkListService.add(checkList);
     }
 
-    @GetMapping("/getAllCheckLists")
-    public Iterable<CheckList> getAllCheckLists(){ return checkListService.findAll(); }
+    @GetMapping("/findAllCheckLists")
+    public Iterable<CheckList> findAllCheckLists(){ return checkListService.findAll(); }
 
     @PostMapping("/deleteCheckList")
-    public void deleteCheckList(@RequestBody int id){
-        checkListService.delete(id);
+    public void deleteCheckList(@RequestBody CheckList checkList){
+        checkListService.delete(checkList);
     }
 
     @PostMapping("/getCheckListById")
     public CheckList getCheckListById(@RequestBody int id){ return (CheckList) checkListService.findById(id); }
+
+    @PostMapping("/updateCheckList")
+    public void updateCheckList(@RequestBody CheckList checkList){ checkListService.update(checkList); }
 }

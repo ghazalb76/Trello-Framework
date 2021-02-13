@@ -1,5 +1,6 @@
 package ir.iust.trello_framework.controller;
 
+import ir.iust.trello_framework.model.Card;
 import ir.iust.trello_framework.model.Team;
 import ir.iust.trello_framework.model.User;
 import ir.iust.trello_framework.service.IService;
@@ -23,14 +24,17 @@ public class TeamController {
         teamService.add(team);
     }
 
-    @GetMapping("/getAllTeams")
-    public Iterable<Team> getAllTeams(){ return teamService.findAll(); }
+    @GetMapping("/findAllTeams")
+    public Iterable<Team> findAllTeams(){ return teamService.findAll(); }
 
     @PostMapping("/deleteTeam")
-    public void deleteTeam(@RequestBody int id){
-        teamService.delete(id);
+    public void deleteTeam(@RequestBody Team team){
+        teamService.delete(team);
     }
 
     @PostMapping("/getTeamById")
     public Team getTeamById(@RequestBody int id){ return (Team) teamService.findById(id); }
+
+    @PostMapping("/updateTeam")
+    public void updateTeam(@RequestBody Team team){ teamService.update(team); }
 }

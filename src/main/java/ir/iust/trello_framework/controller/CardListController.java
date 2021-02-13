@@ -1,5 +1,6 @@
 package ir.iust.trello_framework.controller;
 
+import ir.iust.trello_framework.model.Card;
 import ir.iust.trello_framework.model.CardList;
 import ir.iust.trello_framework.model.User;
 import ir.iust.trello_framework.service.IService;
@@ -23,14 +24,17 @@ public class CardListController {
         cardListService.add(cardList);
     }
 
-    @GetMapping("/getAllCardLists")
-    public Iterable<CardList> getAllCardLists(){ return cardListService.findAll(); }
+    @GetMapping("/findAllCardLists")
+    public Iterable<CardList> findAllCardLists(){ return cardListService.findAll(); }
 
     @PostMapping("/deleteCardList")
-    public void deleteCardList(@RequestBody User user){
-        cardListService.delete(user);
+    public void deleteCardList(@RequestBody CardList cardList){
+        cardListService.delete(cardList);
     }
 
     @PostMapping("/getCardListById")
     public CardList getCardListById(@RequestBody int id){ return (CardList) cardListService.findById(id); }
+
+    @PostMapping("/updateCardList")
+    public void updateCardList(@RequestBody CardList cardList){ cardListService.update(cardList); }
 }
