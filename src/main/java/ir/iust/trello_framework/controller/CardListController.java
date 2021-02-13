@@ -24,13 +24,13 @@ public class CardListController {
     }
 
     @GetMapping("/getAllCardLists")
-    public Iterator<CardList> getAllCardLists(){ return cardListService.getAll(); }
+    public Iterable<CardList> getAllCardLists(){ return cardListService.findAll(); }
 
     @PostMapping("/deleteCardList")
-    public void deleteCardList(@RequestBody int id){
-        cardListService.delete(id);
+    public void deleteCardList(@RequestBody User user){
+        cardListService.delete(user);
     }
 
     @PostMapping("/getCardListById")
-    public CardList getCardListById(@RequestBody int id){ return (CardList) cardListService.getById(id); }
+    public CardList getCardListById(@RequestBody int id){ return (CardList) cardListService.findById(id); }
 }

@@ -24,7 +24,7 @@ public class BoardController {
     }
 
     @GetMapping("/getAllBoards")
-    public Iterator<Board> getAllBoards(){ return boardService.getAll(); }
+    public Iterable<Board> getAllBoards(){ return boardService.findAll(); }
 
     @PostMapping("/deleteBoard")
     public void deleteBoard(@RequestBody int id){
@@ -32,5 +32,5 @@ public class BoardController {
     }
 
     @PostMapping("/getBoardById")
-    public Board getBoardById(@RequestBody int id){ return (Board) boardService.getById(id); }
+    public Board getBoardById(@RequestBody int id){ return (Board) boardService.findById(id); }
 }

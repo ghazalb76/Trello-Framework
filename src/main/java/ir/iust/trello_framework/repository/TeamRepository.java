@@ -17,8 +17,8 @@ public class TeamRepository implements ICRUDRepository<Team> {
     }
 
     @Override
-    public Iterator<Team> getAll() {
-        return (Iterator<Team>) teamList;
+    public Iterable<Team> findAll() {
+        return teamList;
     }
 
     @Override
@@ -28,12 +28,17 @@ public class TeamRepository implements ICRUDRepository<Team> {
     }
 
     @Override
-    public Team getById(int id){
+    public Team findById(int id){
         for (Team team: teamList){
             if(team.getId() == id){
                 return team;
             }
         }
         return null;
+    }
+
+    @Override
+    public void update(Team item) {
+
     }
 }

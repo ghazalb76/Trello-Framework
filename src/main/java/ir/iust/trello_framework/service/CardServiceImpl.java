@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
-import java.util.List;
 
 @Service("cardService")
 public class CardServiceImpl implements IService<Card> {
@@ -16,22 +15,27 @@ public class CardServiceImpl implements IService<Card> {
     ICRUDRepository cardRepository;
 
     @Override
-    public void add(Card card) {
-        cardRepository.add(card);
+    public void add(Card item) {
+
     }
 
     @Override
-    public Iterator<Card> getAll() {
-        return cardRepository.getAll();
+    public Iterable<Card> findAll() {
+        return null;
     }
 
     @Override
-    public Card getById(int id) {
-        return (Card) cardRepository.getById(id);
+    public void delete(Card item) {
+
     }
 
     @Override
-    public void delete(int id) {
-        cardRepository.delete(id);
+    public Card findById(int id) {
+        return null;
+    }
+
+    @Override
+    public void update(Card item) {
+
     }
 }

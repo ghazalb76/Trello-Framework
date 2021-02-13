@@ -23,7 +23,7 @@ public class CardController {
     }
 
     @GetMapping("/getAllCards")
-    public Iterator<Card> getAllCards(){ return cardService.getAll(); }
+    public Iterable<Card> getAllCards(){ return cardService.findAll(); }
 
     @PostMapping("/deleteCard")
     public void deleteCard(@RequestBody int id){
@@ -31,5 +31,5 @@ public class CardController {
     }
 
     @PostMapping("/getCardById")
-    public Card getCardById(@RequestBody int id){ return (Card) cardService.getById(id); }
+    public Card getCardById(@RequestBody int id){ return (Card) cardService.findById(id); }
 }

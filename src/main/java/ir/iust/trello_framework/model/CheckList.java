@@ -1,8 +1,9 @@
 package ir.iust.trello_framework.model;
 
-import ir.iust.trello_framework.model.enumeration.CheckListStatusEnum;
+import lombok.Getter;
+import lombok.Setter;
 
-public class Checklist extends BaseEntity{
+public class CheckList extends BaseEntity{
 
     private String content; // checklist title
     private CheckListStatusEnum status;

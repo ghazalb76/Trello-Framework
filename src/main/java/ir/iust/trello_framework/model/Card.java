@@ -6,10 +6,7 @@ import java.util.List;
 public class Card extends BaseEntity{
 
     private String title; // card title
-    //ToDo Discuss probable new class (Images also included)
     private String description;  //card description
-    //ToDo in create getter, always consider sending iterator or the main list
-// array of checklist id foreign key
     private LocalDateTime creationDate; // card create time
     private LocalDateTime dueDate; // card due date
     private CardList cardList;

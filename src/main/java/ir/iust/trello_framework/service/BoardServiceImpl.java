@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
-import java.util.List;
 
 @Service(value = "boardService")
 public class BoardServiceImpl implements IService<Board> {
@@ -21,17 +20,22 @@ public class BoardServiceImpl implements IService<Board> {
     }
 
     @Override
-    public Iterator<Board> getAll() {
-        return boardRepository.getAll();
+    public Iterable<Board> findAll() {
+        return boardRepository.findAll();
     }
 
     @Override
-    public Board getById(int id) {
-        return (Board) boardRepository.getById(id);
+    public Board findById(int id) {
+        return (Board) boardRepository.findById(id);
     }
 
     @Override
-    public void delete(int id) {
-        boardRepository.delete(id);
+    public void update(Board item) {
+
+    }
+
+    @Override
+    public void delete(Board board) {
+        boardRepository.delete(board);
     }
 }

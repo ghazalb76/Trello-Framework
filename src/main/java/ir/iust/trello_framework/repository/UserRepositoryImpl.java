@@ -4,11 +4,10 @@ import ir.iust.trello_framework.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Component(value = "userRepository")
-public class UserRepository implements ICRUDRepository<User>{
+public class UserRepositoryImpl implements ICRUDRepository<User>{
     private List<User> usersList = new ArrayList<>();
 
     @Override
@@ -17,8 +16,8 @@ public class UserRepository implements ICRUDRepository<User>{
     }
 
     @Override
-    public Iterator<User> getAll() {
-        return (Iterator<User>) usersList;
+    public Iterable<User> findAll() {
+        return usersList;
     }
 
     @Override
@@ -28,12 +27,25 @@ public class UserRepository implements ICRUDRepository<User>{
     }
 
     @Override
-    public User getById(int id){
+    public User findById(int id){
         for (User user: usersList){
             if(user.getId() == id){
                 return user;
             }
         }
         return null;
+    }
+
+    @Override
+    public void update(User item) {
+        for (User user: usersList){
+            if(user.getId() == item.getId()){
+                user.setName(item.getName());
+                user.setEmail(item.getEmail());
+                user.setPassword(item.getPassword());
+                user.setUsername(item.getUsername());
+            }
+        }
+
     }
 }

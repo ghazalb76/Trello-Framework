@@ -5,15 +5,12 @@ import java.util.Iterator;
 public interface ICRUDRepository<Model> {
     void add(Model item);
 
-    Iterator<Model> getAll();
+    Iterable<Model> findAll();
 
     void delete(Model item);
 
-    Model getById(int id);
+    Model findById(int id);
 
-//    Iterator<Model> getAll(Model item);
-//
-//    Model find(Model item);
-//
-//    void update(Model item);
+    void update(Model item);
+
 }

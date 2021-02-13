@@ -18,8 +18,8 @@ public class BoardRepository implements ICRUDRepository<Board> {
     }
 
     @Override
-    public Iterator<Board> getAll() {
-        return (Iterator<Board>) boardList;
+    public Iterable<Board> findAll() {
+        return boardList;
     }
 
     @Override
@@ -29,12 +29,17 @@ public class BoardRepository implements ICRUDRepository<Board> {
     }
 
     @Override
-    public Board getById(int id){
+    public Board findById(int id){
         for (Board board: boardList){
             if(board.getId() == id){
                 return board;
             }
         }
         return null;
+    }
+
+    @Override
+    public void update(Board item) {
+
     }
 }

@@ -20,17 +20,22 @@ public class TeamServiceImpl implements IService<Team> {
     }
 
     @Override
-    public Iterator<Team> getAll() {
-        return teamRepository.getAll();
+    public Iterable<Team> findAll() {
+        return teamRepository.findAll();
     }
 
     @Override
-    public Team getById(int id) {
-        return (Team) teamRepository.getById(id);
+    public Team findById(int id) {
+        return (Team) teamRepository.findById(id);
     }
 
     @Override
-    public void delete(int id) {
-        teamRepository.delete(id);
+    public void update(Team item) {
+
+    }
+
+    @Override
+    public void delete(Team team) {
+        teamRepository.delete(team);
     }
 }

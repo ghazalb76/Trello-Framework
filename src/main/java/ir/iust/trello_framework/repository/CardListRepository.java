@@ -18,8 +18,8 @@ public class CardListRepository implements ICRUDRepository<CardList> {
     }
 
     @Override
-    public Iterator<CardList> getAll() {
-        return (Iterator<CardList>) cardListList;
+    public Iterable<CardList> findAll() {
+        return cardListList;
     }
 
     @Override
@@ -29,12 +29,17 @@ public class CardListRepository implements ICRUDRepository<CardList> {
     }
 
     @Override
-    public CardList getById(int id){
+    public CardList findById(int id){
         for (CardList cardList: cardListList){
             if(cardList.getId() == id){
                 return cardList;
             }
         }
         return null;
+    }
+
+    @Override
+    public void update(CardList item) {
+
     }
 }

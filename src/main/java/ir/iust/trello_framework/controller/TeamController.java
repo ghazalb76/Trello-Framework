@@ -24,7 +24,7 @@ public class TeamController {
     }
 
     @GetMapping("/getAllTeams")
-    public Iterator<Team> getAllTeams(){ return teamService.getAll(); }
+    public Iterable<Team> getAllTeams(){ return teamService.findAll(); }
 
     @PostMapping("/deleteTeam")
     public void deleteTeam(@RequestBody int id){
@@ -32,5 +32,5 @@ public class TeamController {
     }
 
     @PostMapping("/getTeamById")
-    public Team getTeamById(@RequestBody int id){ return (Team) teamService.getById(id); }
+    public Team getTeamById(@RequestBody int id){ return (Team) teamService.findById(id); }
 }

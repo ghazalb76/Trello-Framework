@@ -1,15 +1,12 @@
 package ir.iust.trello_framework.service;
 
-import ir.iust.trello_framework.model.Card;
 import ir.iust.trello_framework.model.CardList;
 import ir.iust.trello_framework.repository.ICRUDRepository;
-import ir.iust.trello_framework.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
-import java.util.List;
 
 @Service(value = "cardListService")
 public class CardListImpl implements IService<CardList> {
@@ -23,17 +20,22 @@ public class CardListImpl implements IService<CardList> {
     }
 
     @Override
-    public Iterator<CardList> getAll() {
-        return userRepository.getAll();
+    public Iterable<CardList> findAll() {
+        return userRepository.findAll();
     }
 
     @Override
-    public CardList getById(int id) {
-        return (CardList) userRepository.getById(id);
+    public CardList findById(int id) {
+        return (CardList) userRepository.findById(id);
     }
 
     @Override
-    public void delete(int id) {
-        userRepository.delete(id);
+    public void update(CardList item) {
+
+    }
+
+    @Override
+    public void delete(CardList cardList) {
+        userRepository.delete(cardList);
     }
 }
